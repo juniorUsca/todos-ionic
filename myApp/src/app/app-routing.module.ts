@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  //{ path: 'list', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'details', loadChildren: './details/details.module#DetailsPageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  { path: '', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'list', loadChildren: './list/list.module#ListPageModule' },
+  { path: 'create', loadChildren: './create/create.module#CreatePageModule' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
