@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-title>{{todo.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+{{todo.description}}
+<br><br><br>
+{{todo.lat}}
+{{todo.lng}}
+{{todo.updatedDate}}
+<div #mapCanvas id="map-canvas" style="height:180px;width:190px;"></div>
 </ion-content>

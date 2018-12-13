@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemSliding } from '@ionic/angular';
 import { HTTP } from '@ionic-native/http/ngx';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -66,8 +65,14 @@ export class ListPage implements OnInit {
 
   open = (todo, slidingItem: ItemSliding) => {
     this.router.navigate(['/details', {
-      todo: todo,
+      todo: JSON.stringify(todo),
+    }]);
+  }
+
+  new = () => {
+    this.router.navigate(['/edit', {
       token: this.token,
+      userId: this.userId,
     }]);
   }
 
